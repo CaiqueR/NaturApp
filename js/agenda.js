@@ -1,25 +1,38 @@
 
 
-// Valida os inputs (Se o tempo A < B e se já não existe o horário informado)
-function podeAdicionarHorarioDisponivel() {
-    return true;
+// Valida os inputs (Se o tempo A < B, e se já não existe o horário informado)
+function validarTempoLivre(item) {
+
+    if (item && item.dia && item.de && item.as) {
+        return true;
+    }
+    return false;
 }
 
-function removerHorarioDisponivel(itemId){
-    $('#'+itemId).remove();
+// Obtem a lista de tempos livres
+function getTemposLivres() {
+    return $('#tabela-tempo-livre tr');
 }
 
-// Adiciona um item na lista de horarios disponiveis
-function addHorarioDisponivel() {
+// Remove um horário disponível
+function removerTempoLivre(itemId) {
+    $('#' + itemId).remove();
+}
+
+// Adiciona um item na lista de tempos disponiveis
+function addTempoLivre() {
     let item = {
-        dia: $('#horario-livre-dia').children("option:selected").val(),
-        de: $('#horario-livre-de').val(),
-        as: $('#horario-livre-as').val(),
+        dia: $('#tempo-livre-dia').children("option:selected").val(),
+        de: $('#tempo-livre-de').val(),
+        as: $('#tempo-livre-as').val(),
     };
-    if (podeAdicionarHorarioDisponivel(item)) {
+    if (validarTempoLivre(item)) {
         let id = (new Date).getTime();
-        $('#tabela-agenda').append('<tr id="'+id+'"><td>' + item.dia + '</td><td>' + item.de + '</td><td>'
-            + item.as + '</td><td><button class="btn-danger" onclick="removerHorarioDisponivel('+id+')">Remover</button></td></tr>');
+        $('#tabela-tempo-livre').append('<tr id="' + id + '"><td>' + item.dia + '</td><td>' + item.de + '</td><td>'
+            + item.as + '</td><td><button class="btn-danger" onclick="removerTempoLivre(' + id + ')">Remover</button></td></tr>');
+        if ($('#div-tabela-tempo-livre').attr('hidden')) {
+            $('#div-tabela-tempo-livre').attr('hidden', false);
+        }
     }
 }
 
