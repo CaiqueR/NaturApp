@@ -27,6 +27,11 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+
+        .row .col-8 .card {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -107,21 +112,94 @@
         </div>
 
 
-        <div class="row" hidden="true">
-            <div class="col-7">
+
+        <div class="row">
+            <div class="col-8">
+                <h2>Hábitos verdes</h2>
+                <div class="card-deck">
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="./assets/images/image1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Conhecer a natureza</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the
+                                card's content.</p>
+                            <a href="#livros" id="btnconhecer" onclick=getLivros(this) class="btn btn-primary">Vamos
+                                lá!</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="./assets/images/image2.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Contribuir com a natureza</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the
+                                card's content.</p>
+                            <a href="#livros" id="btncontribuir" onclick=getLivros(this) class="btn btn-primary">Vamos
+                                lá!</a>
+                        </div>
+                    </div>
+
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="/assets/images/image3.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Quero adotar um hábito verde</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the
+                                card's content.</p>
+                            <a href="#livros" id="btnhabito" onclick=getLivros(this) class="btn btn-primary">Vamos
+                                lá!</a>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
-            <div class="col-5">
-                <div id="card-livro" class="card" style="width: 18rem;">
-                    <img id="imagem-livro" class="card-img-top"
-                        src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22287%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20287%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16e5d228a9d%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16e5d228a9d%22%3E%3Crect%20width%3D%22287%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22101.57500076293945%22%20y%3D%2296.87999973297119%22%3E287x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 id="titulo-livro" class="card-title"></h5>
-                        <p id="descricao-livro" class="card-text"></p>
-                        <a id="link-livro" href="#" class="btn btn-primary">Mais Informações</a>
+        </div>
+
+        <div id="livros" class="row">
+            <div class="col-8">
+                <h2>Separamos esses livros especialmente para você</h2>
+                <p>Baseado na opção escolhida por você escolhida anteriormente.
+                </p>
+                <p id="sugestao"></p>
+                <div class="card" id="livro1">
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <img src="/assets/images/image1.png" class="w-100">
+                        </div>
+                        <div class="col-md-8 px-3">
+                            <div class="card-block px-3">
+                                <h4 class="card-title"></h4>
+                                <p class="card-text"></p>
+                                <a href="#" id="leia-mais" target="_blank" class="btn btn-primary">Leia mais</a>
+                                <a href="#" id="comprar" target="_blank" class="btn btn-success">Comprar</a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
+                <div class="card" id="livro1">
+                        <div class="row ">
+                            <div class="col-md-4">
+                                <img src="/assets/images/image1.png" class="w-100">
+                            </div>
+                            <div class="col-md-8 px-3">
+                                <div class="card-block px-3">
+                                    <h4 class="card-title"></h4>
+                                    <p class="card-text"></p>
+                                    <a href="#" id="leia-mais" target="_blank" class="btn btn-primary">Leia mais</a>
+                                    <a href="#" id="comprar" target="_blank" class="btn btn-success">Comprar</a>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+
             </div>
 
         </div>
@@ -141,12 +219,113 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <script>
+        window.onload = () => {
+            document.getElementById("livros").style.display = "none";
+        }
+        const livrosConhecer = [
+            {
+                "titulo": "Livro teste 1",
+                "descricao": "Descricao teste 1",
+                "link": "https://www.amazon.com.br/gp/browse.html?node=6740748011&ref_=nav_em_T1_0_4_6_1__books_all",
+            },
+            {
+                "titulo": "Livro teste 2",
+                "descricao": "Descricao teste 2",
+                "link": "https://www.amazon.com.br/gp/browse.html?node=6740748011&ref_=nav_em_T1_0_4_6_1__books_all",
+            }
+
+        ]
+        const livrosContribuir = [
+        {
+                "titulo": "",
+                "descricao": "",
+                "link": "",
+            },
+            {
+                "titulo": "",
+                "descricao": "",
+                "link": "",
+            }
+        ];
+        const livrosHabito = [
+        {
+                "titulo": "",
+                "descricao": "",
+                "link": "",
+            },
+            {
+                "titulo": "",
+                "descricao": "",
+                "link": "",
+            }
+        ];
+        const sugestoesConhecer = [
+            "Sugiro que você explore o mundo",
+            "Sugiro que você vá caminhar pela floresta. Mas com cuidado!!",
+            "Sugiro uma vida melhor"
+        ]
+        const sugestoesContribuir = [
+            "Sugiro que você plante uma árvore. Acredite, faz diferença!",
+            "Sugiro que você ler um livro sobre como o desmatamento prejudica a natureza",
+            "Sugiro que você use um transporte público. Afinal, um dia não tem problema."
+        ]
+        const sugestoesHabito = [
+            "Sugiro que você faça uma reciclagem, um dos melhores hábitos verdes",
+            "Sugiro que você economize um pouco de luz, afinal, não usamos a todo momento",
+            "Sugiro que você economize agua, até mesmo porque um dia acaba!"
+        ]
 
 
+        function getLivros(event) {
+            document.getElementById("livros").style.display = "block";
+            let sugestao = document.getElementById("sugestao");
+
+            switch (event.id) {
+                case 'btnconhecer':
+                let value = Math.floor(Math.random() * sugestoesConhecer.length);
+                    sugestao.innerHTML = sugestoesConhecer[value]
+                    document.querySelector("#livro1 .card-title").innerHTML = livrosConhecer[0].titulo
+                    document.querySelector("#livro1 .card-text").innerHTML = livrosConhecer[0].descricao
+                    let comprar = document.querySelector("#livro1 .btn.btn-success")
+                    comprar.href = livrosConhecer[0].link
+                    break;
+                case 'btncontribuir':
+                    sugestao.innerHTML = sugestoesContribuir[Math.floor(Math.random() * sugestoesContribuir.length)]
+                    break;
+                case 'btnhabito':
+                    sugestao.innerHTML = sugestoesHabito[Math.floor(Math.random() * sugestoesHabito.length)]
+                    break;
+            }
+        }
 
 
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
     </script>
 </body>
 
