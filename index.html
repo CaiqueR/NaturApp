@@ -229,19 +229,19 @@
         }
         const livrosConhecer = [
             {
-                "titulo": "Livro teste 1",
-                "descricao": "Descricao teste 1",
-                "link": "https://www.amazon.com.br/gp/browse.html?node=6740748011&ref_=nav_em_T1_0_4_6_1__books_all",
+                "titulo": "The Hidden Life of Trees",
+                "descricao": "Peter Wohlleben, um lenhador que passou grande parte de sua vida estudando a floresta e como ela vive e respira como sua própria entidade, Wohlleben nos estimula a pensar nas árvores como um grupo familiar e não como agentes livres dentro do espaço do deserto.",
+                "link": "https://www.amazon.com/Hidden-Life-Trees-Communicate_Discoveries-Secret/dp/1771642483",
             },
             {
-                "titulo": "Livro teste 2",
-                "descricao": "Descricao teste 2",
-                "link": "https://www.amazon.com.br/gp/browse.html?node=6740748011&ref_=nav_em_T1_0_4_6_1__books_all",
+                "titulo": "The Greening of the Self",
+                "descricao": "O livro de Joanna Macy reflete sobre como os níveis do Self podem evoluir para um lugar que se chama o “Green Self” ultrapassando nossa necessidade de pensar individualmente, como seres separados e desiguais do meio ambiente em que vivemos.",
+                "link": "https://www.amazon.com/Greening-Self-Joanna-Macy-ebook/dp/B00B0SBFKA",
             },
             {
-                "titulo": "Livro teste 3",
-                "descricao": "Descricao teste 3",
-                "link": "https://www.amazon.com.br/gp/browse.html?node=6740748011&ref_=nav_em_T1_0_4_6_1__books_all",
+                "titulo": "A ferra e fogo",
+                "descricao": "Um livro que conta a história da devastação da Mata Atlântica brasileira, de Warren Dean.",
+                "link": "https://www.companhiadasletras.com.br/detalhe.php?codigo=10671",
             },
             {
                 "titulo": "Livro teste 4",
@@ -262,6 +262,16 @@
         ]
         const livrosContribuir = [
             {
+                "titulo": "Love Earth Now: The Power of Doing One Thing Every Day",
+                "descricao": "O livro de Leutjen sobre como ser um agente de mudança é repleto de dicas e instruções sobre como contribuir na mitigação das mudanças climáticas e a preservação meio ambiente",
+                "link": "https://www.amazon.com/Love-Earth-Now-Power-Doing/dp/1633536254",
+            },
+            {
+                "titulo": "A Terra Inabitável - Uma História Do Futuro",
+                "descricao": "Best-seller do New York Times, uma reportagem corajosa e desafiadora sobre os problemas que o século XXI enfrentará por conta do aquecimento global.",
+                "link": "https://www.saraiva.com.br/a-terra-inabitavel-uma-historia-do-futuro-10531978/p",
+            },
+            {
                 "titulo": "",
                 "descricao": "",
                 "link": "",
@@ -270,18 +280,48 @@
                 "titulo": "",
                 "descricao": "",
                 "link": "",
-            }
+            },
+            {
+                "titulo": "",
+                "descricao": "",
+                "link": "",
+            },
+            {
+                "titulo": "",
+                "descricao": "",
+                "link": "",
+            },
         ];
         const livrosHabito = [
             {
-                "titulo": "",
-                "descricao": "",
-                "link": "",
+                "titulo": "The Dream of the Earth",
+                "descricao": "O objetivo de Berry é nos educar sobre a saúde da Terra e sugerir maneiras de nos recondicionarmos às necessidades de nosso lar terreno",
+                "link": "https://www.amazon.com/Dream-Earth-Thomas-Berry/dp/0871566222",
             },
             {
-                "titulo": "",
-                "descricao": "",
-                "link": "",
+                "titulo": "50 Ways to Help Save the Earth",
+                "descricao": "Este guia descreve cinquenta maneiras pelas quais você, sua congregação e sua comunidade local podem ajudar a combater o aquecimento global e a participar de uma parte vital do discipulado cristão. 50 Maneiras de Ajudar a Salvar a Terra faz uma conexão clara, de maneira prática e sem intimidação, entre a mordomia da terra e a vida de alguém.",
+                "link": "https://www.amazon.com/Ways-Help-Save-Earth-Difference/dp/0664233708",
+            },
+            {
+                "titulo": "The Everything Green Living Book",
+                "descricao": "Se você estiver interessado em encontrar novas fontes de energia, viver verde e salvar o meio ambiente, este é um dos livros de vida verde que você deve comprar.",
+                "link": "https://www.amazon.com/Everything-Green-Living-Book-Environment/dp/1598694251",
+            },
+            {
+                "titulo": "It's Easy Being Green",
+                "descricao": "Embora todos nós tenhamos consciência dos danos causados ao nosso amado planeta, não estamos fazendo muito para salvá-lo. Para discutir essa questão, a autora Crissy Trask escreveu o livro \"É fácil ser verde: um manual para uma vida ecologicamente correta\".",
+                "link": "https://www.amazon.com/Its-Easy-Being-Green-Earth-Friendly/dp/158685772X",
+            },
+            {
+                "titulo": "The Forest Garden Greenhouse",
+                "descricao": "Isso pertence à lista dos melhores livros sobre vida verde, o que explica claramente que não é muito difícil trazer o jardim da floresta para dentro de casa. É possível atingir o objetivo de criar uma floresta natural em seu quintal sem usar energia da rede.",
+                "link": "https://www.amazon.com.br/Forest-Garden-Greenhouse-Design-Permaculture/dp/1603584269",
+            },
+            {
+                "titulo": "Prefabulous and Sustainable",
+                "descricao": "Prefabulous and Sustainable é um dos livros altamente recomendados sobre vida verde. Ajuda a entender os ingredientes básicos da vida sustentável. Além disso, também dissipa os mitos errados associados às casas pré-fabricadas. De fato, este livro ajuda os leitores a entender a verdadeira idéia por trás das casas pré-fabricadas verdes.",
+                "link": "https://www.amazon.com/Prefabulous-Sustainable-Customizing-Affordable-Energy-Efficient/dp/0810984830",
             }
         ];
         const sugestoesConhecer = [
@@ -326,7 +366,6 @@
                     // Gerar valor aletório de acordo com o tamanho o array
                     // Para sugerir algo sobre contribuir com a natureza
                     value = Math.floor(Math.random() * sugestoesContribuir.length);
-                    console.log(sugestao)
                     sugestao.innerHTML = sugestoesContribuir[value]
 
                     for (let index = 1; index <= 2; index++) {
