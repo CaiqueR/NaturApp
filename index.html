@@ -2,227 +2,231 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Title</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
 
-        td,
-        th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
+		td,
+		th {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
 
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
 
-        .row .col-8 .card {
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
+		.row .col-8 .card {
+			padding-bottom: 10px;
+			margin-bottom: 10px;
+		}
+	</style>
 </head>
 
 <body>
-    <div class="container">
-        <nav id="navegacao" class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">NaturApp</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+	<div class="container">
+		<nav id="navegacao" class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">NaturApp</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        </nav>
+		</nav>
 
-        <!-- INTRODUÇÃO -->
-        <div class="row">
-            <div class="col-8">
-                <h2>Bem-Vindo ao NaturApp!</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and
-                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap
-                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-                    the
-                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing
-                    software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-            </div>
-            <div class="col-4" style="padding: 30px">
-                <img width="230px"
+		<!-- INTRODUÇÃO -->
+		<div class="row">
+			<div class="col-8">
+				<h2>Bem-Vindo ao NaturApp!</h2>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+					industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+					and
+					scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+					leap
+					into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+					the
+					release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+					publishing
+					software like Aldus PageMaker including versions of Lorem Ipsum.
+				</p>
+			</div>
+			<div class="col-4" style="padding: 30px">
+				<img width="230px"
                     src="https://previews.123rf.com/images/nujalee/nujalee1108/nujalee110800004/10410227-beautiful-green-leaf-isolated-on-white.jpg">
             </div>
-        </div>
+			</div>
 
-        <!-- AGENDA -->
-        <div class="row">
-            <div class="col-8">
-                <h2>Organize sua agenda <span>verde</span></h2>
-                <p>Selecione o seu horário livre durante a semana:</p>
-                <form>
-                    Dia
-                    <select>
+			<!-- AGENDA -->
+			<div class="row">
+				<div class="col-8">
+					<h2>Organize sua agenda <span>verde</span></h2>
+					<p>Selecione o seu horário livre durante a semana:</p>
+					Dia
+					<select id="horario-livre-dia">
+                        <option>Domingo</option>                    
                         <option>Segunda-Feira</option>
-                        <option>teste</option>
+                        <option>Terça-Feira</option>
+                        <option>Quarta-Feira</option>                        
+                        <option>Quinta-Feira</option>
+                        <option>Sexta-Feira</option>
+                        <option>Sábado</option>
                     </select>
-                    de
-                    <input type="text">
+					de
+					<input id="horario-livre-de" type="text">
                     às
-                    <input type="text">
-                    <button>Adicionar</button>
-                </form>
-                <hr>
-                <table id="tabela-agenda">
-                    <tr>
-                        <th>Dia</th>
-                        <th>De</th>
-                        <th>Às</th>
-                        <th>Remover</th>
-                    </tr>
-                    <tr>
-                        <td>Alfreds Futterkiste</td>
-                        <td>Maria Anders</td>
-                        <td>Germany</td>
-                        <td><button class="btn-danger" onclick="removerTarefa()">Remover</button></td>
-                    </tr>
-                </table>
-                <div style="text-align: center; margin: 10px">
-                    <button class="btn-primary">Ver Sugestões</button>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-10"></div>
-                    <div class="col-2"><button class="btn-success">Continuar</button></div>
-                </div>
-            </div>
-        </div>
+					<input id="horario-livre-as" type="text">
+					<button onclick="addHorarioDisponivel()">Adicionar</button>
+
+					<hr>
+					<table id="tabela-agenda">
+						<tr>
+							<th>Dia</th>
+							<th>De</th>
+							<th>Às</th>
+							<th>Remover</th>
+						</tr>
+                        <!-- Aqui serão inseridos (via javascript) os horários livres -->
+					</table>
+					<div style="text-align: center; margin: 10px">
+						<button class="btn-primary">Ver Sugestões</button>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-10"></div>
+						<div class="col-2"><button class="btn-success">Continuar</button></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- HABITOS VERDES -->
+			<div class="row">
+				<div class="col-8">
+					<h2>Hábitos verdes</h2>
+					<div class="card-deck">
+
+						<div class="card" style="width: 18rem;">
+							<img src="./assets/images/image1.png" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Conhecer a natureza</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the
+									bulk
+									of the
+									card's content.</p>
+								<a href="#livros" id="btnconhecer" onclick=getLivros(this) class="btn btn-primary">Vamos
+									lá!</a>
+							</div>
+						</div>
+
+						<div class="card" style="width: 18rem;">
+							<img src="./assets/images/image2.png" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Contribuir com a natureza</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the
+									bulk
+									of the
+									card's content.</p>
+								<a href="#livros" id="btncontribuir" onclick=getLivros(this)
+									class="btn btn-primary">Vamos
+									lá!</a>
+							</div>
+						</div>
 
 
+						<div class="card" style="width: 18rem;">
+							<img src="/assets/images/image3.png" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Quero adotar um hábito verde</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the
+									bulk
+									of the
+									card's content.</p>
+								<a href="#livros" id="btnhabito" onclick=getLivros(this) class="btn btn-primary">Vamos
+									lá!</a>
+							</div>
+						</div>
 
-        <div class="row">
-            <div class="col-8">
-                <h2>Hábitos verdes</h2>
-                <div class="card-deck">
+					</div>
 
-                    <div class="card" style="width: 18rem;">
-                        <img src="./assets/images/image1.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Conhecer a natureza</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the
-                                card's content.</p>
-                            <a href="#livros" id="btnconhecer" onclick=getLivros(this) class="btn btn-primary">Vamos
-                                lá!</a>
+				</div>
+			</div>
+
+			<div id="livros" class="row">
+				<div class="col-8">
+					<h2>Separamos esses livros especialmente para você</h2>
+					<p>Baseado na opção escolhida por você escolhida anteriormente.
+					</p>
+					<p id="sugestao"></p>
+					<div class="card" id="livro1">
+						<div class="row ">
+							<div class="col-md-4">
+								<img src="/assets/images/image1.png" class="w-100">
                         </div>
-                    </div>
+								<div class="col-md-8 px-3">
+									<div class="card-block px-3">
+										<h4 class="card-title"></h4>
+										<p class="card-text"></p>
+										<a href="#" id="leia-mais" target="_blank" class="btn btn-primary">Leia mais</a>
+										<a href="#" id="comprar" target="_blank" class="btn btn-success">Comprar</a>
+									</div>
+								</div>
 
-                    <div class="card" style="width: 18rem;">
-                        <img src="./assets/images/image2.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Contribuir com a natureza</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the
-                                card's content.</p>
-                            <a href="#livros" id="btncontribuir" onclick=getLivros(this) class="btn btn-primary">Vamos
-                                lá!</a>
-                        </div>
-                    </div>
+							</div>
+						</div>
 
-
-                    <div class="card" style="width: 18rem;">
-                        <img src="/assets/images/image3.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Quero adotar um hábito verde</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the
-                                card's content.</p>
-                            <a href="#livros" id="btnhabito" onclick=getLivros(this) class="btn btn-primary">Vamos
-                                lá!</a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-        <div id="livros" class="row">
-            <div class="col-8">
-                <h2>Separamos esses livros especialmente para você</h2>
-                <p>Baseado na opção escolhida por você escolhida anteriormente.
-                </p>
-                <p id="sugestao"></p>
-                <div class="card" id="livro1">
-                    <div class="row ">
-                        <div class="col-md-4">
-                            <img src="/assets/images/image1.png" class="w-100">
-                        </div>
-                        <div class="col-md-8 px-3">
-                            <div class="card-block px-3">
-                                <h4 class="card-title"></h4>
-                                <p class="card-text"></p>
-                                <a href="#" id="leia-mais" target="_blank" class="btn btn-primary">Leia mais</a>
-                                <a href="#" id="comprar" target="_blank" class="btn btn-success">Comprar</a>
+						<div class="card" id="livro1">
+							<div class="row ">
+								<div class="col-md-4">
+									<img src="/assets/images/image1.png" class="w-100">
                             </div>
-                        </div>
+									<div class="col-md-8 px-3">
+										<div class="card-block px-3">
+											<h4 class="card-title"></h4>
+											<p class="card-text"></p>
+											<a href="#" id="leia-mais" target="_blank" class="btn btn-primary">Leia
+												mais</a>
+											<a href="#" id="comprar" target="_blank" class="btn btn-success">Comprar</a>
+										</div>
+									</div>
 
-                    </div>
-                </div>
+								</div>
+							</div>
 
-                <div class="card" id="livro1">
-                        <div class="row ">
-                            <div class="col-md-4">
-                                <img src="/assets/images/image1.png" class="w-100">
-                            </div>
-                            <div class="col-md-8 px-3">
-                                <div class="card-block px-3">
-                                    <h4 class="card-title"></h4>
-                                    <p class="card-text"></p>
-                                    <a href="#" id="leia-mais" target="_blank" class="btn btn-primary">Leia mais</a>
-                                    <a href="#" id="comprar" target="_blank" class="btn btn-success">Comprar</a>
-                                </div>
-                            </div>
-    
-                        </div>
-                    </div>
+						</div>
 
-            </div>
-
-        </div>
+					</div>
 
 
-    </div>
+				</div>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+				<!-- Optional JavaScript -->
+				<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+					integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+					crossorigin="anonymous"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+					integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+					crossorigin="anonymous"></script>
+				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+					integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+					crossorigin="anonymous"></script>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+				<script src="js/agenda.js"></script>
 
-    <script>
-        window.onload = () => {
+				<script>
+					window.onload = () => {
             document.getElementById("livros").style.display = "none";
         }
         const livrosConhecer = [
@@ -326,7 +330,7 @@
                 } // End if
             });
         });
-    </script>
+				</script>
 </body>
 
 </html>
