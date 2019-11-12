@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav id="navegacao" class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">NaturApp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+
+        <!-- INTRODUÇÃO -->
+        <div class="row">
+            <div class="col-8">
+                <h2>Bem-Vindo ao NaturApp!</h2>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and
+                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                    the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing
+                    software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </div>
+            <div class="col-4" style="padding: 30px">
+                <img width="230px"
+                    src="https://previews.123rf.com/images/nujalee/nujalee1108/nujalee110800004/10410227-beautiful-green-leaf-isolated-on-white.jpg">
+            </div>
+        </div>
+
+        <!-- AGENDA -->
+        <div class="row">
+            <div class="col-8">
+                <h2>Organize sua agenda <span>verde</span></h2>
+                <p>Selecione o seu horário livre durante a semana:</p>
+                <form>
+                    Dia
+                    <select>
+                        <option>Segunda-Feira</option>
+                        <option>teste</option>
+                    </select>
+                    de
+                    <input type="text">
+                    às
+                    <input type="text">
+                    <button>Adicionar</button>
+                </form>
+                <hr>
+                <table id="tabela-agenda">
+                    <tr>
+                        <th>Dia</th>
+                        <th>De</th>
+                        <th>Às</th>
+                        <th>Remover</th>
+                    </tr>
+                    <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                        <td><button class="btn-danger" onclick="removerTarefa()">Remover</button></td>
+                    </tr>
+                </table>
+                <div style="text-align: center; margin: 10px">
+                    <button class="btn-primary">Ver Sugestões</button>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-10"></div>
+                    <div class="col-2"><button class="btn-success">Continuar</button></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" hidden="true">
+            <div class="col-7">
+
+            </div>
+            <div class="col-5">
+                <div id="card-livro" class="card" style="width: 18rem;">
+                    <img id="imagem-livro" class="card-img-top"
+                        src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22287%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20287%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16e5d228a9d%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16e5d228a9d%22%3E%3Crect%20width%3D%22287%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22101.57500076293945%22%20y%3D%2296.87999973297119%22%3E287x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 id="titulo-livro" class="card-title"></h5>
+                        <p id="descricao-livro" class="card-text"></p>
+                        <a id="link-livro" href="#" class="btn btn-primary">Mais Informações</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+
+
+
+    </script>
+</body>
+
+</html>
