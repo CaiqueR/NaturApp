@@ -24,6 +24,10 @@
             padding: 8px;
         }
 
+        .agua {
+            color: rgb(33, 99, 121);
+        }
+
         tr:nth-child(even) {
             background-color: #dddddd;
         }
@@ -72,6 +76,30 @@
             </div>
         </div>
 
+        <!-- CALCULADORA -->
+        <div>
+            <h2>Calculadora de Consumo de <span class="agua">água</span></h2>
+            <div class="row">
+                <div class="col-6">
+                    <form>
+                        <p>Quantos minutos você gasta no banho?</p>
+                        <input type="number" class="form-control" placeholder="Minutos">
+                        <br>
+                        <p>Por quantos minutos você usa a pia do banheiro, por dia?</p>
+                        <input type="number" class="form-control" placeholder="Minutos">
+                    </form>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="width: 18rem; height:50%">
+                        <div class="card-body" style="text-align: center;">
+                            <a class="btn btn-primary">Calcular</a>
+                            <h3>20 Litros</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- AGENDA -->
         <div class="row">
             <div class="col-8">
@@ -80,7 +108,7 @@
                     <p>Selecione o seu tempo livre durante a semana:</p>
                     <div class="row">
                         <div class="col-3">
-                            <select  id="tempo-livre-dia">
+                            <select id="tempo-livre-dia">
                                 <option>Domingo</option>
                                 <option>Segunda-Feira</option>
                                 <option>Terça-Feira</option>
