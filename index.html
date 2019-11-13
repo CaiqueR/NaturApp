@@ -44,8 +44,14 @@
         .text-justify {
             text-align: justify;
         }
-        #calcular-gasto .card{
+
+        #calcular-gasto .card {
             padding: 20px;
+        }
+
+        #navegacao,
+        .navbar .navbar-default {
+            background-image: url("./assets/images/background.png");
         }
     </style>
 </head>
@@ -53,6 +59,8 @@
 <body>
     <div class="container">
         <nav id="navegacao" class="navbar navbar-expand-lg navbar-light bg-light">
+            <img src="https://previews.123rf.com/images/nujalee/nujalee1108/nujalee110800004/10410227-beautiful-green-leaf-isolated-on-white.jpg    "
+                width="30" height="30" class="d-inline-block align-top" alt="">
             <a class="navbar-brand" href="#">NaturApp</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,28 +98,30 @@
             <div class="row">
                 <div class="col-10">
                     <form id="calcular-gasto">
-                            <div class="card-group">
-                                    <div class="card" style="min-width: 20rem;">
-                                            <label>Quantos minutos você gasta no banho?</label>
-                                            <input required id="minutos-banho" type="number" class="form-control" placeholder="Minutos">
-                    
-                                            <br>
-                                            <label>Por quantos minutos você usa a pia do banheiro, por dia?</label>
-                                            <input required id="minutos-pia" type="number" class="form-control" placeholder="Minutos">
-                    
-                                    </div>
-            
-            
-                                    <div class="card" style="width: 18rem; text-align: center">
-                                        <div class="card-body">
-                                            <button type="submit" onclick="calcularGasto()"
-                                                class="btn btn-primary">Calcular</button>
-                                            <h5 id="litros-gastos" class="card-title"></h5>
-                                            <p id="mensagem-gastos" class="card-text"></p>
-                                        </div>
-                                    </div>
+                        <div class="card-group">
+                            <div class="card" style="min-width: 20rem;">
+                                <label>Quantos minutos você gasta no banho?</label>
+                                <input required id="minutos-banho" type="number" class="form-control"
+                                    placeholder="Minutos">
+
+                                <br>
+                                <label>Por quantos minutos você usa a pia do banheiro, por dia?</label>
+                                <input required id="minutos-pia" type="number" class="form-control"
+                                    placeholder="Minutos">
+
                             </div>
-                        
+
+
+                            <div class="card" style="width: 18rem; text-align: center">
+                                <div class="card-body">
+                                    <button type="submit" onclick="calcularGasto()"
+                                        class="btn btn-primary">Calcular</button>
+                                    <h5 id="litros-gastos" class="card-title"></h5>
+                                    <p id="mensagem-gastos" class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+
 
                     </form>
                 </div>
@@ -197,7 +207,7 @@
                             <h5 class="card-title">Contribuir com a natureza</h5>
                             <p class="card-text">Descubra uma maneira de contribuir para a
                                 natureza de forma positiva clique em Contribuir.</p>
-                            <a href="#livros" id="btncontribuir" onclick=getLivros(this)
+                            <a href="#sugestao" id="btncontribuir" onclick=getLivros(this)
                                 class="btn btn-primary">Contribuir</a>
                         </div>
                     </div>
@@ -209,7 +219,7 @@
                             <h5 class="card-title">Quero adotar um hábito verde</h5>
                             <p class="card-text">Se você quiser saber como você pode adotar um hábito verde clique em
                                 Adotar hábito verde.</p>
-                            <a href="#livros" id="btnhabito" onclick=getLivros(this) class="btn btn-primary">Adotar
+                            <a href="#sugestao" id="btnhabito" onclick=getLivros(this) class="btn btn-primary">Adotar
                                 hábito verde</a>
                         </div>
                     </div>
@@ -418,7 +428,7 @@
 
 
         function getLivros(event) {
-            document.getElementById("livros").style.display = "block";
+            //document.getElementById("livros").style.display = "block";
             // Sugestão que aparecerá para o usuário quando ele clicar em 
             // alguma das 3 opções
             let sugestao = document.getElementById("sugestao");
@@ -494,23 +504,26 @@
             $("a").on('click', function (event) {
 
                 // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
+                setTimeout(() => {
+                    document.getElementById("livros").style.display = "block";
+                    if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
 
-                    // Store hash
-                    var hash = this.hash;
+                        // Store hash
+                        var hash = this.hash;
 
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function () {
+                        // Using jQuery's animate() method to add smooth page scroll
+                        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 800, function () {
 
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                } // End if
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        });
+                    } // End if
+                }, 2000)
             });
         });
 
