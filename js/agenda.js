@@ -27,20 +27,37 @@ function removerTempoLivre(itemId) {
     if (temposLivres.length == 0) {
         $('#div-tabela-tempo-livre').attr('hidden', true);
     }
+    $('#btn-adicionar-tempo-livre').attr('hidden', false);
+}
+
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    return array;
 }
 
 function gerarAgenda() {
     let temposLivres = getTemposLivres();
     if (temposLivres.length != 0) {
+        let arr = shuffle([...sugestoes]);
         $('#label-tempo-livre').html('Sugestões');
         $('.botao-tempo-livre').each(function (index) {
-            $(this).html('teste123');
+            $(this).html(arr.pop());
         });
     }
 }
 
 // Adiciona um item na lista de tempos disponiveis
 function addTempoLivre() {
+    if (getTemposLivres().length >= 1) {
+        $('#btn-adicionar-tempo-livre').attr('hidden', true);
+    }
     let item = {
         dia: $('#tempo-livre-dia').children("option:selected").val(),
         de: $('#tempo-livre-de').val(),
