@@ -36,6 +36,10 @@
             padding-bottom: 10px;
             margin-bottom: 10px;
         }
+
+        .text-justify {
+            text-align: justify;
+        }
     </style>
 </head>
 
@@ -80,7 +84,7 @@
                     <p>Selecione o seu tempo livre durante a semana:</p>
                     <div class="row">
                         <div class="col-3">
-                            <select  id="tempo-livre-dia">
+                            <select id="tempo-livre-dia">
                                 <option>Domingo</option>
                                 <option>Segunda-Feira</option>
                                 <option>Terça-Feira</option>
@@ -138,12 +142,9 @@
                         <img src="./assets/images/image1.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Conhecer a natureza</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                                of the
-                                card's content.</p>
-                            <a href="#livros" id="btnconhecer" onclick=getLivros(this) class="btn btn-primary">Vamos
-                                lá!</a>
+                            <p class="card-text">Conheça um pouco mais sobre a natureza clicando no botão conhecer.</p>
+                            <a href="#sugestao" id="btnconhecer" onclick=getLivros(this)
+                                class="btn btn-primary">Conhecer</a>
                         </div>
                     </div>
 
@@ -151,12 +152,10 @@
                         <img src="./assets/images/image2.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Contribuir com a natureza</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                                of the
-                                card's content.</p>
-                            <a href="#livros" id="btncontribuir" onclick=getLivros(this) class="btn btn-primary">Vamos
-                                lá!</a>
+                            <p class="card-text">Descubra uma maneira de contribuir para a
+                                natureza de forma positiva clique em Contribuir.</p>
+                            <a href="#livros" id="btncontribuir" onclick=getLivros(this)
+                                class="btn btn-primary">Contribuir</a>
                         </div>
                     </div>
 
@@ -165,17 +164,15 @@
                         <img src="/assets/images/image3.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Quero adotar um hábito verde</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                                of the
-                                card's content.</p>
-                            <a href="#livros" id="btnhabito" onclick=getLivros(this) class="btn btn-primary">Vamos
-                                lá!</a>
+                            <p class="card-text">Se você quiser saber como você pode adotar um hábito verde clique em
+                                Adotar hábito verde.</p>
+                            <a href="#livros" id="btnhabito" onclick=getLivros(this) class="btn btn-primary">Adotar
+                                hábito verde</a>
                         </div>
                     </div>
 
                 </div>
-
+                <h5 id="sugestao"></h5>
             </div>
         </div>
 
@@ -184,17 +181,16 @@
                 <h2>Separamos esses livros especialmente para você</h2>
                 <p>Baseado na opção escolhida por você escolhida anteriormente.
                 </p>
-                <h5 id="sugestao"></h5>
+
                 <div class="card" id="livro1">
                     <div class="row ">
                         <div class="col-md-4">
-                            <img src="/assets/images/image1.png" class="w-100">
+                            <img src="" width="150">
                         </div>
                         <div class="col-md-8 px-3">
                             <div class="card-block px-3">
                                 <h4 class="card-title"></h4>
                                 <p class="card-text"></p>
-                                <a href="#" target="_blank" class="btn btn-primary">Leia mais</a>
                                 <a href="#" target="_blank" class="btn btn-success">Comprar</a>
                             </div>
                         </div>
@@ -205,13 +201,12 @@
                 <div class="card" id="livro2">
                     <div class="row ">
                         <div class="col-md-4">
-                            <img src="/assets/images/image1.png" class="w-100">
+                            <img src="" width="150">
                         </div>
                         <div class="col-md-8 px-3">
                             <div class="card-block px-3">
                                 <h4 class="card-title"></h4>
                                 <p class="card-text"></p>
-                                <a href="#" target="_blank" class="btn btn-primary">Leia mais</a>
                                 <a href="#" target="_blank" class="btn btn-success">Comprar</a>
                             </div>
                         </div>
@@ -383,6 +378,7 @@
             // alguma das 3 opções
             let sugestao = document.getElementById("sugestao");
             let value = 0;
+            let livroanterior = Number.POSITIVE_INFINITY;
 
             switch (event.id) {
                 case 'btnconhecer':
@@ -393,9 +389,16 @@
 
                     for (let index = 1; index <= 2; index++) {
                         let livro = Math.floor(Math.random() * livrosConhecer.length)
+
+                        while (livroanterior == livro) {
+                            livro = Math.floor(Math.random() * livrosConhecer.length)
+                        }
+
                         document.querySelector(`#livro${index} .card-title`).innerHTML = livrosConhecer[livro].titulo
                         document.querySelector(`#livro${index} .card-text`).innerHTML = livrosConhecer[livro].descricao
-                        document.querySelector("#livro1 .btn.btn-success").href = livrosConhecer[livro].link
+                        document.querySelector(`#livro${index} .btn.btn-success`).href = livrosConhecer[livro].link
+                        document.querySelector(`#livro${index} img`).src = `/assets/images/books/${livrosConhecer[livro].foto}.png`
+                        livroanterior = livro;
                     }
                     break;
                 case 'btncontribuir':
@@ -404,11 +407,17 @@
                     value = Math.floor(Math.random() * sugestoesContribuir.length);
                     sugestao.innerHTML = sugestoesContribuir[value]
 
+
                     for (let index = 1; index <= 2; index++) {
                         let livro = Math.floor(Math.random() * livrosContribuir.length)
+                        while (livroanterior == livro) {
+                            livro = Math.floor(Math.random() * livrosContribuir.length)
+                        }
                         document.querySelector(`#livro${index} .card-title`).innerHTML = livrosContribuir[livro].titulo
                         document.querySelector(`#livro${index} .card-text`).innerHTML = livrosContribuir[livro].descricao
                         document.querySelector("#livro1 .btn.btn-success").href = livrosContribuir[livro].link
+                        document.querySelector(`#livro${index} img`).src = `/assets/images/books/${livrosContribuir[livro].foto}.png`
+                        livroanterior = livro;
                     }
                     break;
                 case 'btnhabito':
@@ -419,9 +428,16 @@
 
                     for (let index = 1; index <= 2; index++) {
                         let livro = Math.floor(Math.random() * livrosContribuir.length)
+
+                        while (livroanterior == livro) {
+                            livro = Math.floor(Math.random() * livrosHabito.length)
+                        }
+
                         document.querySelector(`#livro${index} .card-title`).innerHTML = livrosHabito[livro].titulo
                         document.querySelector(`#livro${index} .card-text`).innerHTML = livrosHabito[livro].descricao
                         document.querySelector("#livro1 .btn.btn-success").href = livrosHabito[livro].link
+                        document.querySelector(`#livro${index} img`).src = `/assets/images/books/${livrosHabito[livro].foto}.png`
+                        livroanterior = livro;
                     }
                     break;
             }
