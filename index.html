@@ -44,6 +44,9 @@
         .text-justify {
             text-align: justify;
         }
+        #calcular-gasto .card{
+            padding: 20px;
+        }
     </style>
 </head>
 
@@ -85,24 +88,34 @@
         <div>
             <h2>Calculadora de Consumo de <span class="agua">água</span></h2>
             <div class="row">
-                <div class="col-6">
-                    <form>
-                        <p>Quantos minutos você gasta no banho?</p>
-                        <input type="number" class="form-control" placeholder="Minutos">
-                        <br>
-                        <p>Por quantos minutos você usa a pia do banheiro, por dia?</p>
-                        <input type="number" class="form-control" placeholder="Minutos">
+                <div class="col-10">
+                    <form id="calcular-gasto">
+                            <div class="card-group">
+                                    <div class="card" style="min-width: 20rem;">
+                                            <label>Quantos minutos você gasta no banho?</label>
+                                            <input required id="minutos-banho" type="number" class="form-control" placeholder="Minutos">
+                    
+                                            <br>
+                                            <label>Por quantos minutos você usa a pia do banheiro, por dia?</label>
+                                            <input required id="minutos-pia" type="number" class="form-control" placeholder="Minutos">
+                    
+                                    </div>
+            
+            
+                                    <div class="card" style="width: 18rem; text-align: center">
+                                        <div class="card-body">
+                                            <button type="submit" onclick="calcularGasto()"
+                                                class="btn btn-primary">Calcular</button>
+                                            <h5 id="litros-gastos" class="card-title"></h5>
+                                            <p id="mensagem-gastos" class="card-text"></p>
+                                        </div>
+                                    </div>
+                            </div>
+                        
+
                     </form>
                 </div>
-                <div class="col-6">
-                    <div class="card" style="width: 18rem; text-align: center">
-                        <div class="card-body">
-                            <a onclick="calcularGasto()" class="btn btn-primary">Calcular</a>
-                            <h5 id="litros-gastos" class="card-title"></h5>
-                            <p id="mensagem-gastos" class="card-text"></p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
 
@@ -257,6 +270,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
@@ -498,6 +512,10 @@
                     });
                 } // End if
             });
+        });
+
+        $('#calcular-gasto').submit(function (e) {
+            e.preventDefault();
         });
     </script>
 </body>
