@@ -133,37 +133,37 @@
         <div class="row">
             <div class="col-8">
                 <h2>Monte sua agenda <span class="verde">verde</span></h2>
-                <form>
-                    <p>Selecione o seu tempo livre durante a semana:</p>
-                    <div class="row">
-                        <div class="col-3">
-                            <select id="tempo-livre-dia">
-                                <option>Domingo</option>
-                                <option>Segunda-Feira</option>
-                                <option>Terça-Feira</option>
-                                <option>Quarta-Feira</option>
-                                <option>Quinta-Feira</option>
-                                <option>Sexta-Feira</option>
-                                <option>Sábado</option>
-                            </select>
-                        </div>
-                        <div class="col-1">
-                            <b> de </b>
-                        </div>
-                        <div class="col-2">
-                            <input id="tempo-livre-de" type="time">
-                        </div>
-                        <div class="col-1">
-                            <b> às </b>
-                        </div>
-                        <div class="col-2">
-                            <input id="tempo-livre-as" type="time">
-                        </div>
-                        <div class="col-2">
-                            <button class="btn-primary" onclick="addTempoLivre()">Adicionar</button>
-                        </div>
+
+                <p>Selecione o seu tempo livre durante a semana:</p>
+                <div class="row">
+                    <div class="col-3">
+                        <select id="tempo-livre-dia">
+                            <option>Domingo</option>
+                            <option>Segunda-Feira</option>
+                            <option>Terça-Feira</option>
+                            <option>Quarta-Feira</option>
+                            <option>Quinta-Feira</option>
+                            <option>Sexta-Feira</option>
+                            <option>Sábado</option>
+                        </select>
                     </div>
-                </form>
+                    <div class="col-1">
+                        <b> de </b>
+                    </div>
+                    <div class="col-2">
+                        <input id="tempo-livre-de" type="time">
+                    </div>
+                    <div class="col-1">
+                        <b> às </b>
+                    </div>
+                    <div class="col-2">
+                        <input id="tempo-livre-as" type="time">
+                    </div>
+                    <div class="col-2">
+                        <button class="btn-primary" onclick="addTempoLivre()">Adicionar</button>
+                    </div>
+                </div>
+
 
                 <div id="div-tabela-tempo-livre" hidden="true">
                     <hr>
@@ -172,12 +172,12 @@
                             <th>Dia</th>
                             <th>De</th>
                             <th>Às</th>
-                            <th>Remover</th>
+                            <th id="label-tempo-livre">Remover</th>
                         </tr>
                         <!-- Aqui serão inseridos (via javascript) os horários livres -->
                     </table>
                     <div style="text-align: center; margin: 10px">
-                        <button class="btn-success">Gerar Agenda</button>
+                        <button onclick="gerarAgenda()" class="btn-success">Gerar Agenda</button>
                     </div>
                 </div>
             </div>
@@ -294,6 +294,8 @@
     <script>
         window.onload = () => {
             document.getElementById("livros").style.display = "none";
+
+
         }
         const livrosConhecer = [
             {
