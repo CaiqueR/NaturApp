@@ -1,8 +1,8 @@
-
 const sugestoes = [
-    '<a href="https://canalrural.uol.com.br/noticias/saiba-como-cultivar-uma-horta-organica-casa-53820/">Cultive uma Horta Orgânica<a>',
-    '<a href="https://www.ecycle.com.br/component/content/article/44-guia-da-reciclagem/1741-guia-basico-da-reciclagem-saiba-como-reaproveitar-e-reciclar-uma-serie-de-itens-do-dia-a-dia.html">Recicle um lixo<a>',
-    '<a href="">Cultive uma Horta Orgânica<a>',
+    '<a target="_blank" href="https://canalrural.uol.com.br/noticias/saiba-como-cultivar-uma-horta-organica-casa-53820/">Cultive uma Horta Orgânica<a>',
+    '<a target="_blank" href="https://www.ecycle.com.br/component/content/article/44-guia-da-reciclagem/1741-guia-basico-da-reciclagem-saiba-como-reaproveitar-e-reciclar-uma-serie-de-itens-do-dia-a-dia.html">Recicle um lixo<a>',
+    '<a target="_blank" href="http://www.dcoracao.com/2016/06/como-criar-o-seu-proprio-papel-de.html">Faça seu próprio papel<a>',
+    '<a target="_blank" href="https://www.pensamentoverde.com.br/meio-ambiente/passo-passo-aprenda-como-plantar-uma-arvore-corretamente/">Plante uma árvore<a>',
 ];
 
 
