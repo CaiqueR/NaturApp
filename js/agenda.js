@@ -66,7 +66,7 @@ function addTempoLivre() {
     if (validarTempoLivre(item)) {
         let id = (new Date).getTime();
         $('#tabela-tempo-livre').append('<tr id="' + id + '"><td>' + item.dia + '</td><td>' + item.de + '</td><td>'
-            + item.as + '</td><td class="botao-tempo-livre"><button class="btn-danger" onclick="removerTempoLivre(' + id + ')">Remover</button></td></tr>');
+            + item.as + '</td><td class="botao-tempo-livre"><button class="btn btn-danger" onclick="removerTempoLivre(' + id + ')">Remover</button></td></tr>');
         if ($('#div-tabela-tempo-livre').attr('hidden')) {
             $('#div-tabela-tempo-livre').attr('hidden', false);
         }

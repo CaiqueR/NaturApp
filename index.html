@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>NaturApp</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.fourjay.org/myphoto/f/34/348311_leaf-icon-png.png" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -95,12 +96,12 @@
                             <div class="card" style="min-width: 20rem;">
                                 <label>Quantos minutos você gasta no banho?</label>
                                 <input required id="minutos-banho" type="number" class="form-control"
-                                    placeholder="Minutos">
+                                    placeholder="Minutos" min="0">
 
                                 <br>
                                 <label>Por quantos minutos você usa a pia do banheiro, por dia?</label>
                                 <input required id="minutos-pia" type="number" class="form-control"
-                                    placeholder="Minutos">
+                                    placeholder="Minutos" min="0">
 
                             </div>
 
@@ -130,7 +131,7 @@
                 <p>Selecione o seu tempo livre durante a semana:</p>
                 <div class="row">
                     <div class="col-3">
-                        <select id="tempo-livre-dia">
+                        <select id="tempo-livre-dia" class="form-control">
                             <option>Domingo</option>
                             <option>Segunda-Feira</option>
                             <option>Terça-Feira</option>
@@ -144,16 +145,16 @@
                         <b> de </b>
                     </div>
                     <div class="col-2">
-                        <input id="tempo-livre-de" type="time">
+                        <input id="tempo-livre-de" type="time" class="form-control">
                     </div>
                     <div class="col-1">
                         <b> às </b>
                     </div>
                     <div class="col-2">
-                        <input id="tempo-livre-as" type="time">
+                        <input id="tempo-livre-as" type="time" class="form-control">
                     </div>
                     <div class="col-2">
-                        <button id="btn btn-adicionar-tempo-livre" class="btn-primary"
+                        <button id="btn-adicionar-tempo-livre" class="btn btn-primary"
                             onclick="addTempoLivre()">Adicionar</button>
                     </div>
                 </div>
@@ -219,7 +220,7 @@
                     </div>
 
                 </div>
-                <h5 id="sugestao"></h5>
+                <h5 id="sugestao" ></h5>
             </div>
         </div>
 
@@ -430,6 +431,8 @@
             let sugestao = document.getElementById("sugestao");
             let value = 0;
             let livroanterior = Number.POSITIVE_INFINITY;
+            sugestao.className = "alert alert-success";
+            sugestao.setAttribute("role","alert")
 
             switch (event.id) {
                 case 'btnconhecer':
