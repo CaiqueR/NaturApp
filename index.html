@@ -1,535 +1,665 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>NaturApp</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" type="image/x-icon" href="https://www.fourjay.org/myphoto/f/34/348311_leaf-icon-png.png" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://www.fourjay.org/myphoto/f/34/348311_leaf-icon-png.png"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
 
-        td,
-        th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
 
-        .agua {
-            color: rgb(33, 99, 121);
-        }
+      .agua {
+        color: rgb(33, 99, 121);
+      }
 
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
 
-        .verde {
-            color: rgb(44, 190, 44);
-        }
+      .verde {
+        color: rgb(44, 190, 44);
+      }
 
-        .row .col-8 .card {
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-        }
+      .row .col-8 .card {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
 
-        .text-justify {
-            text-align: justify;
-        }
+      .text-justify {
+        text-align: justify;
+      }
 
-        #calcular-gasto .card {
-            padding: 20px;
-        }
+      #calcular-gasto .card {
+        padding: 20px;
+      }
 
-        #navegacao,
-        .navbar .navbar-default {
-            background-image: url("./assets/images/background.png");
-        }
+      #navegacao,
+      .navbar .navbar-default {
+        background-image: url("./assets/images/background.png");
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <nav id="navegacao" class="navbar navbar-expand-lg navbar-light bg-light">
-            <img src="https://www.fourjay.org/myphoto/f/34/348311_leaf-icon-png.png" width="130"
-                class="d-inline-block align-top" alt="">
-            <a class="navbar-brand verde" href="#" style="margin-left: 20px; font-size: 5em;">NaturApp</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </nav>
+      <nav id="navegacao" class="navbar navbar-expand-lg navbar-light bg-light">
+        <img
+          src="https://www.fourjay.org/myphoto/f/34/348311_leaf-icon-png.png"
+          width="130"
+          class="d-inline-block align-top"
+          alt=""
+        />
+        <a
+          class="navbar-brand verde"
+          href="#"
+          style="margin-left: 20px; font-size: 5em;"
+          >NaturApp</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
 
-        <!-- INTRODUÇÃO -->
-        <div class="row" style="margin-top: 50px">
-            <div class="col-8">
-                <h2>Bem-Vindo ao NaturApp!</h2>
-                <p>
-                    Saiba como contribuir e deixar a Natureza cada vez melhor! 
-                </p>
-                <p>
-                    Utilize nossa calculadora para saber mais sobre o seus gastos de água e diminua os desperdícios. No final, preparamos sugestões especialmente para você! Esperamos que goste das dicas e faça sua vida cada vez mais <span class="verde">verde</span>!
-                </p>
-            </div>
-            <div class="col-4" style="padding: 30px">
-                <img width="200px" src="https://www.fourjay.org/myphoto/f/34/348311_leaf-icon-png.png">
-            </div>
+      <!-- INTRODUÇÃO -->
+      <div class="row" style="margin-top: 50px;">
+        <div class="col-8">
+          <h2>Bem-Vindo ao NaturApp!</h2>
+          <p>
+            Saiba como contribuir e deixar a Natureza cada vez melhor!
+          </p>
+          <p>
+            Utilize nossa calculadora para saber mais sobre o seus gastos de
+            água e diminua os desperdícios. No final, preparamos sugestões
+            especialmente para você! Esperamos que goste das dicas e faça sua
+            vida cada vez mais <span class="verde">verde</span>!
+          </p>
         </div>
+        <div class="col-4" style="padding: 30px;">
+          <img
+            width="200px"
+            src="./assets/images/iconfinder_Eco_leaves_nature_2992440.png"
+          />
+        </div>
+      </div>
 
+      <!-- CALCULADORA -->
+      <div>
+        <h2>Calculadora de Consumo de <span class="agua">água</span></h2>
+        <div class="row">
+          <div class="col-10">
+            <form id="calcular-gasto">
+              <div class="card-group">
+                <div class="card" style="min-width: 20rem;">
+                  <label>Quantos minutos você gasta no banho?</label>
+                  <input
+                    required
+                    id="minutos-banho"
+                    type="number"
+                    class="form-control"
+                    placeholder="Minutos"
+                    min="0"
+                  />
 
-        <!-- CALCULADORA -->
-        <div>
-            <h2>Calculadora de Consumo de <span class="agua">água</span></h2>
+                  <br />
+                  <label
+                    >Por quantos minutos você usa a pia do banheiro, por
+                    dia?</label
+                  >
+                  <input
+                    required
+                    id="minutos-pia"
+                    type="number"
+                    class="form-control"
+                    placeholder="Minutos"
+                    min="0"
+                  />
+                </div>
+
+                <div class="card" style="width: 18rem; text-align: center;">
+                  <div class="card-body">
+                    <button
+                      type="submit"
+                      onclick="calcularGasto()"
+                      class="btn btn-primary"
+                    >
+                      Calcular
+                    </button>
+                    <h5 id="litros-gastos" class="card-title"></h5>
+                    <p id="mensagem-gastos" class="card-text"></p>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- AGENDA -->
+      <div class="row" style="margin-top: 50px;">
+        <div class="col-8">
+          <h2>Monte sua agenda <span class="verde">verde</span></h2>
+
+          <p>Selecione o seu tempo livre durante a semana:</p>
+          <div class="row">
+            <div class="col-3">
+              <select id="tempo-livre-dia" class="form-control">
+                <option>Domingo</option>
+                <option>Segunda-Feira</option>
+                <option>Terça-Feira</option>
+                <option>Quarta-Feira</option>
+                <option>Quinta-Feira</option>
+                <option>Sexta-Feira</option>
+                <option>Sábado</option>
+              </select>
+            </div>
+            <div class="col-1">
+              <b> de </b>
+            </div>
+            <div class="col-2">
+              <input id="tempo-livre-de" type="time" class="form-control" />
+            </div>
+            <div class="col-1">
+              <b> às </b>
+            </div>
+            <div class="col-2">
+              <input id="tempo-livre-as" type="time" class="form-control" />
+            </div>
+            <div class="col-2">
+              <button
+                id="btn-adicionar-tempo-livre"
+                class="btn btn-primary"
+                onclick="addTempoLivre()"
+              >
+                Adicionar
+              </button>
+            </div>
+          </div>
+
+          <div id="div-tabela-tempo-livre" hidden="true">
+            <hr />
+            <table id="tabela-tempo-livre">
+              <tr>
+                <th>Dia</th>
+                <th>De</th>
+                <th>Às</th>
+                <th id="label-tempo-livre">Remover</th>
+              </tr>
+              <!-- Aqui serão inseridos (via javascript) os horários livres -->
+            </table>
+            <div style="text-align: center; margin: 10px;">
+              <button onclick="gerarAgenda()" class="btn btn-success">
+                Gerar Agenda
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- HABITOS VERDES -->
+      <div class="row" style="margin-top: 50px;">
+        <div class="col-8">
+          <h2>Hábitos <span class="verde">verdes</span></h2>
+          <div class="card-deck">
+            <div class="card" style="width: 18rem;">
+              <img
+                src="./assets/images/image1.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Conhecer a natureza</h5>
+                <p class="card-text">
+                  Conheça um pouco mais sobre a natureza clicando no botão
+                  conhecer.
+                </p>
+                <a
+                  href="#sugestao"
+                  id="btnconhecer"
+                  onclick="getLivros(this)"
+                  class="btn btn-primary"
+                  >Conhecer</a
+                >
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <img
+                src="./assets/images/image2.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Contribuir com a natureza</h5>
+                <p class="card-text">
+                  Descubra uma maneira de contribuir para a natureza de forma
+                  positiva clique em Contribuir.
+                </p>
+                <a
+                  href="#sugestao"
+                  id="btncontribuir"
+                  onclick="getLivros(this)"
+                  class="btn btn-primary"
+                  >Contribuir</a
+                >
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <img
+                src="./assets/images/image3.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Quero adotar um hábito verde</h5>
+                <p class="card-text">
+                  Se você quiser saber como você pode adotar um hábito verde
+                  clique em Adotar hábito verde.
+                </p>
+                <a
+                  href="#sugestao"
+                  id="btnhabito"
+                  onclick="getLivros(this)"
+                  class="btn btn-primary"
+                  >Adotar hábito verde</a
+                >
+              </div>
+            </div>
+          </div>
+          <h5 id="sugestao"></h5>
+        </div>
+      </div>
+
+      <div id="livros" class="row">
+        <div class="col-8">
+          <h2>Separamos esses livros especialmente para você</h2>
+          <p>Baseado na opção escolhida por você escolhida anteriormente.</p>
+
+          <div class="card" id="livro1">
             <div class="row">
-                <div class="col-10">
-                    <form id="calcular-gasto">
-                        <div class="card-group">
-                            <div class="card" style="min-width: 20rem;">
-                                <label>Quantos minutos você gasta no banho?</label>
-                                <input required id="minutos-banho" type="number" class="form-control"
-                                    placeholder="Minutos" min="0">
-
-                                <br>
-                                <label>Por quantos minutos você usa a pia do banheiro, por dia?</label>
-                                <input required id="minutos-pia" type="number" class="form-control"
-                                    placeholder="Minutos" min="0">
-
-                            </div>
-
-
-                            <div class="card" style="width: 18rem; text-align: center">
-                                <div class="card-body">
-                                    <button type="submit" onclick="calcularGasto()"
-                                        class="btn btn-primary">Calcular</button>
-                                    <h5 id="litros-gastos" class="card-title"></h5>
-                                    <p id="mensagem-gastos" class="card-text"></p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </form>
+              <div class="col-md-4">
+                <img src="" width="150" />
+              </div>
+              <div class="col-md-8 px-3">
+                <div class="card-block px-3">
+                  <h4 class="card-title"></h4>
+                  <p class="card-text"></p>
+                  <a href="#" target="_blank" class="btn btn-success"
+                    >Comprar</a
+                  >
                 </div>
-
+              </div>
             </div>
-        </div>
+          </div>
 
-        <!-- AGENDA -->
-        <div class="row" style="margin-top: 50px">
-            <div class="col-8">
-                <h2>Monte sua agenda <span class="verde">verde</span></h2>
-
-                <p>Selecione o seu tempo livre durante a semana:</p>
-                <div class="row">
-                    <div class="col-3">
-                        <select id="tempo-livre-dia" class="form-control">
-                            <option>Domingo</option>
-                            <option>Segunda-Feira</option>
-                            <option>Terça-Feira</option>
-                            <option>Quarta-Feira</option>
-                            <option>Quinta-Feira</option>
-                            <option>Sexta-Feira</option>
-                            <option>Sábado</option>
-                        </select>
-                    </div>
-                    <div class="col-1">
-                        <b> de </b>
-                    </div>
-                    <div class="col-2">
-                        <input id="tempo-livre-de" type="time" class="form-control">
-                    </div>
-                    <div class="col-1">
-                        <b> às </b>
-                    </div>
-                    <div class="col-2">
-                        <input id="tempo-livre-as" type="time" class="form-control">
-                    </div>
-                    <div class="col-2">
-                        <button id="btn-adicionar-tempo-livre" class="btn btn-primary"
-                            onclick="addTempoLivre()">Adicionar</button>
-                    </div>
+          <div class="card" id="livro2">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="" width="150" />
+              </div>
+              <div class="col-md-8 px-3">
+                <div class="card-block px-3">
+                  <h4 class="card-title"></h4>
+                  <p class="card-text"></p>
+                  <a href="#" target="_blank" class="btn btn-success"
+                    >Comprar</a
+                  >
                 </div>
-
-
-                <div id="div-tabela-tempo-livre" hidden="true">
-                    <hr>
-                    <table id="tabela-tempo-livre">
-                        <tr>
-                            <th>Dia</th>
-                            <th>De</th>
-                            <th>Às</th>
-                            <th id="label-tempo-livre">Remover</th>
-                        </tr>
-                        <!-- Aqui serão inseridos (via javascript) os horários livres -->
-                    </table>
-                    <div style="text-align: center; margin: 10px">
-                        <button onclick="gerarAgenda()" class="btn btn-success">Gerar Agenda</button>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
-
-        <hr>
-
-        <!-- HABITOS VERDES -->
-        <div class="row" style="margin-top: 50px">
-            <div class="col-8">
-                <h2>Hábitos <span class="verde">verdes</span></h2>
-                <div class="card-deck">
-
-                    <div class="card" style="width: 18rem;">
-                        <img src="./assets/images/image1.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Conhecer a natureza</h5>
-                            <p class="card-text">Conheça um pouco mais sobre a natureza clicando no botão conhecer.</p>
-                            <a href="#sugestao" id="btnconhecer" onclick=getLivros(this)
-                                class="btn btn-primary">Conhecer</a>
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: 18rem;">
-                        <img src="./assets/images/image2.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Contribuir com a natureza</h5>
-                            <p class="card-text">Descubra uma maneira de contribuir para a
-                                natureza de forma positiva clique em Contribuir.</p>
-                            <a href="#sugestao" id="btncontribuir" onclick=getLivros(this)
-                                class="btn btn-primary">Contribuir</a>
-                        </div>
-                    </div>
-
-
-                    <div class="card" style="width: 18rem;">
-                        <img src="/assets/images/image3.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Quero adotar um hábito verde</h5>
-                            <p class="card-text">Se você quiser saber como você pode adotar um hábito verde clique em
-                                Adotar hábito verde.</p>
-                            <a href="#sugestao" id="btnhabito" onclick=getLivros(this) class="btn btn-primary">Adotar
-                                hábito verde</a>
-                        </div>
-                    </div>
-
-                </div>
-                <h5 id="sugestao" ></h5>
-            </div>
-        </div>
-
-        <div id="livros" class="row">
-            <div class="col-8">
-                <h2>Separamos esses livros especialmente para você</h2>
-                <p>Baseado na opção escolhida por você escolhida anteriormente.
-                </p>
-
-                <div class="card" id="livro1">
-                    <div class="row ">
-                        <div class="col-md-4">
-                            <img src="" width="150">
-                        </div>
-                        <div class="col-md-8 px-3">
-                            <div class="card-block px-3">
-                                <h4 class="card-title"></h4>
-                                <p class="card-text"></p>
-                                <a href="#" target="_blank" class="btn btn-success">Comprar</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="card" id="livro2">
-                    <div class="row ">
-                        <div class="col-md-4">
-                            <img src="" width="150">
-                        </div>
-                        <div class="col-md-8 px-3">
-                            <div class="card-block px-3">
-                                <h4 class="card-title"></h4>
-                                <p class="card-text"></p>
-                                <a href="#" target="_blank" class="btn btn-success">Comprar</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-
+      </div>
     </div>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/agenda.js"></script>
     <script src="js/calculadora.js"></script>
 
     <script>
-        window.onload = () => {
-            document.getElementById("livros").style.display = "none";
+      window.onload = () => {
+        document.getElementById("livros").style.display = "none";
+      };
+      const livrosConhecer = [
+        {
+          titulo: "The Hidden Life of Trees",
+          descricao:
+            "Peter Wohlleben, um lenhador que passou grande parte de sua vida estudando a floresta e como ela vive e respira como sua própria entidade, Wohlleben nos estimula a pensar nas árvores como um grupo familiar e não como agentes livres dentro do espaço do deserto.",
+          link:
+            "https://www.amazon.com/Hidden-Life-Trees-Communicate_Discoveries-Secret/dp/1771642483",
+          foto: "lifeoftrees",
+        },
+        {
+          titulo: "The Greening of the Self",
+          descricao:
+            "O livro de Joanna Macy reflete sobre como os níveis do Self podem evoluir para um lugar que se chama o “Green Self” ultrapassando nossa necessidade de pensar individualmente, como seres separados e desiguais do meio ambiente em que vivemos.",
+          link:
+            "https://www.amazon.com/Greening-Self-Joanna-Macy-ebook/dp/B00B0SBFKA",
+          foto: "greeningoftheself",
+        },
+        {
+          titulo: "A ferra e fogo",
+          descricao:
+            "Um livro que conta a história da devastação da Mata Atlântica brasileira, de Warren Dean.",
+          link:
+            "https://www.companhiadasletras.com.br/detalhe.php?codigo=10671",
+          foto: "aferroefogo",
+        },
+        {
+          titulo: "The Botany of Desire",
+          descricao:
+            "O livro  apresenta estudos de caso que espelham quatro tipos de desejos humanos que são refletidos na maneira como seletivamente crescemos, reproduzimos e projetamos geneticamente nossas plantas. A tulipa, beleza; maconha, intoxicação; a maçã, doçura; e a batata, controle.",
+          link:
+            "https://www.amazon.com.br/Botany-Desire-Plants-Eye-View-World/dp/0375760393",
+          foto: "botanyofdesire",
+        },
+        {
+          titulo: "A invenção da natureza",
+          descricao:
+            "A invenção da natureza revela a extraordinária vida do explorador, geógrafo e naturalista alemão Alexander von Humboldt (1769-1859), o cientista mais conhecido de seu tempo.",
+          link:
+            "https://www.amazon.com.br/Inven%C3%A7%C3%A3o-Natureza-Andrea-Wulf/dp/8542207556",
+          foto: "invencaonatureza",
+        },
+        {
+          titulo: "The Nature Fix",
+          descricao:
+            "Impecavelmente pesquisado e cuidadosamente escrito, The Nature Fix é uma ótima leitura. Florence Williams mergulha no assunto submetendo-se a um estudo após o outro sobre os efeitos da natureza no bem-estar humano.",
+          link:
+            "https://www.amazon.com.br/Nature-Fix-Happier-Healthier-Creative/dp/0393242714",
+          foto: "naturefix",
+        },
+      ];
+      const livrosContribuir = [
+        {
+          titulo: "Love Earth Now: The Power of Doing One Thing Every Day",
+          descricao:
+            "O livro de Leutjen sobre como ser um agente de mudança é repleto de dicas e instruções sobre como contribuir na mitigação das mudanças climáticas e a preservação meio ambiente",
+          link:
+            "https://www.amazon.com/Love-Earth-Now-Power-Doing/dp/1633536254",
+          foto: "loveearth",
+        },
+        {
+          titulo: "A Terra Inabitável - Uma História Do Futuro",
+          descricao:
+            "Best-seller do New York Times, uma reportagem corajosa e desafiadora sobre os problemas que o século XXI enfrentará por conta do aquecimento global.",
+          link:
+            "https://www.saraiva.com.br/a-terra-inabitavel-uma-historia-do-futuro-10531978/p",
+          foto: "terrainabitavel",
+        },
+        {
+          titulo: "Bringing Nature Home",
+          descricao:
+            "Em Bringing Nature Home, Douglas W. Tallamy revela o vínculo inquebrável entre espécies de plantas nativas e animais selvagens nativos - os insetos nativos não podem ou não comem plantas exóticas. Quando as plantas nativas desaparecem, os insetos desaparecem, empobrecendo a fonte de alimento para pássaros e outros animais.",
+          link:
+            "https://www.amazon.com/Bringing-Nature-Home-Wildlife-Expanded/dp/0881929921",
+          foto: "bringingnature",
+        },
+        {
+          titulo: "The Invention of Nature",
+          descricao:
+            "O aclamado autor de Jardineiros Fundadores revela a vida esquecida de Alexander von Humboldt, o naturalista alemão visionário cujas idéias mudaram a maneira como vemos o mundo natural - e, nesse processo, criou o ambientalismo moderno.",
+          link:
+            "https://www.amazon.com/Invention-Nature-Alexander-Humboldts-World/dp/0345806298/ref=sr_1_4?keywords=nature&qid=1573601575&rnid=3275128011&s=books&sr=1-4",
+          foto: "inventionofnature",
+        },
+        {
+          titulo: "The Eight Master Lessons of Nature",
+          descricao:
+            "Um manifesto fascinante para os milhões de pessoas que desejam estabelecer uma conexão mais vital e significativa com o mundo natural para viver uma vida melhor e mais gratificante",
+          link:
+            "https://www.amazon.com/Eight-Master-Lessons-Nature-Teaches/dp/1524743380/ref=sr_1_16?keywords=nature&qid=1573601575&rnid=3275128011&s=books&sr=1-16",
+          foto: "eightmasterlessons",
+        },
+        {
+          titulo: "Nature into Art",
+          descricao:
+            "Wave Hill, um jardim público de renome mundial no Bronx, possui um artesanato hortícola clássico incomparável entre outros jardins públicos nos Estados Unidos. Mas também adota um espírito de design ousado e inovador. Todo ano traz mudanças para o Wave Hill: novas combinações de cores, texturas e formas, além de temas criativos e experimentação constante",
+          link:
+            "https://www.amazon.com/Nature-into-Art-Gardens-Wave/dp/1604698519/ref=sr_1_17?keywords=nature&qid=1573601800&rnid=3275128011&s=books&sr=1-17",
+          foto: "natureintoart",
+        },
+      ];
+      const livrosHabito = [
+        {
+          titulo: "The Dream of the Earth",
+          descricao:
+            "O objetivo de Berry é nos educar sobre a saúde da Terra e sugerir maneiras de nos recondicionarmos às necessidades de nosso lar terreno",
+          link: "https://www.amazon.com/Dream-Earth-Thomas-Berry/dp/0871566222",
+          foto: "dreamoftheearth",
+        },
+        {
+          titulo: "50 Ways to Help Save the Earth",
+          descricao:
+            "Este guia descreve cinquenta maneiras pelas quais você, sua congregação e sua comunidade local podem ajudar a combater o aquecimento global e a participar de uma parte vital do discipulado cristão. 50 Maneiras de Ajudar a Salvar a Terra faz uma conexão clara, de maneira prática e sem intimidação, entre a mordomia da terra e a vida de alguém.",
+          link:
+            "https://www.amazon.com/Ways-Help-Save-Earth-Difference/dp/0664233708",
+          foto: "50waystohelp",
+        },
+        {
+          titulo: "The Everything Green Living Book",
+          descricao:
+            "Se você estiver interessado em encontrar novas fontes de energia, viver verde e salvar o meio ambiente, este é um dos livros de vida verde que você deve comprar.",
+          link:
+            "https://www.amazon.com/Everything-Green-Living-Book-Environment/dp/1598694251",
+          foto: "everythinggreen",
+        },
+        {
+          titulo: "It's Easy Being Green",
+          descricao:
+            'Embora todos nós tenhamos consciência dos danos causados ao nosso amado planeta, não estamos fazendo muito para salvá-lo. Para discutir essa questão, a autora Crissy Trask escreveu o livro "É fácil ser verde: um manual para uma vida ecologicamente correta".',
+          link:
+            "https://www.amazon.com/Its-Easy-Being-Green-Earth-Friendly/dp/158685772X",
+          foto: "itseasybeinggreen",
+        },
+        {
+          titulo: "The Forest Garden Greenhouse",
+          descricao:
+            "Isso pertence à lista dos melhores livros sobre vida verde, o que explica claramente que não é muito difícil trazer o jardim da floresta para dentro de casa. É possível atingir o objetivo de criar uma floresta natural em seu quintal sem usar energia da rede.",
+          link:
+            "https://www.amazon.com.br/Forest-Garden-Greenhouse-Design-Permaculture/dp/1603584269",
+          foto: "forestgarden",
+        },
+        {
+          titulo: "Prefabulous and Sustainable",
+          descricao:
+            "Prefabulous and Sustainable é um dos livros altamente recomendados sobre vida verde. Ajuda a entender os ingredientes básicos da vida sustentável. Além disso, também dissipa os mitos errados associados às casas pré-fabricadas. De fato, este livro ajuda os leitores a entender a verdadeira idéia por trás das casas pré-fabricadas verdes.",
+          link:
+            "https://www.amazon.com/Prefabulous-Sustainable-Customizing-Affordable-Energy-Efficient/dp/0810984830",
+          foto: "prefabulous",
+        },
+      ];
+      const sugestoesConhecer = [
+        "Sugiro que você explore o mundo",
+        "Sugiro que você vá caminhar pela floresta. Mas com cuidado!!",
+        "Sugiro uma vida melhor",
+      ];
+      const sugestoesContribuir = [
+        "Sugiro que você plante uma árvore. Acredite, faz diferença!",
+        "Sugiro que você ler um livro sobre como o desmatamento prejudica a natureza",
+        "Sugiro que você use um transporte público. Afinal, um dia não tem problema.",
+      ];
+      const sugestoesHabito = [
+        "Sugiro que você faça uma reciclagem, um dos melhores hábitos verdes",
+        "Sugiro que você economize um pouco de luz, afinal, não usamos a todo momento",
+        "Sugiro que você economize agua, até mesmo porque um dia acaba!",
+      ];
 
+      function getLivros(event) {
+        //document.getElementById("livros").style.display = "block";
+        // Sugestão que aparecerá para o usuário quando ele clicar em
+        // alguma das 3 opções
+        let sugestao = document.getElementById("sugestao");
+        let value = 0;
+        let livroanterior = Number.POSITIVE_INFINITY;
+        sugestao.className = "alert alert-success";
+        sugestao.setAttribute("role", "alert");
 
+        switch (event.id) {
+          case "btnconhecer":
+            // Gerar valor aletório de acordo com o tamanho o array
+            // Para sugerir algo sobre conhecer a natureza
+            value = Math.floor(Math.random() * sugestoesConhecer.length);
+            sugestao.innerHTML = sugestoesConhecer[value];
+
+            for (let index = 1; index <= 2; index++) {
+              let livro = Math.floor(Math.random() * livrosConhecer.length);
+
+              while (livroanterior == livro) {
+                livro = Math.floor(Math.random() * livrosConhecer.length);
+              }
+
+              document.querySelector(`#livro${index} .card-title`).innerHTML =
+                livrosConhecer[livro].titulo;
+              document.querySelector(`#livro${index} .card-text`).innerHTML =
+                livrosConhecer[livro].descricao;
+              document.querySelector(`#livro${index} .btn.btn-success`).href =
+                livrosConhecer[livro].link;
+              document.querySelector(
+                `#livro${index} img`
+              ).src = `/assets/images/books/${livrosConhecer[livro].foto}.png`;
+              livroanterior = livro;
+            }
+            break;
+          case "btncontribuir":
+            // Gerar valor aletório de acordo com o tamanho o array
+            // Para sugerir algo sobre contribuir com a natureza
+            value = Math.floor(Math.random() * sugestoesContribuir.length);
+            sugestao.innerHTML = sugestoesContribuir[value];
+
+            for (let index = 1; index <= 2; index++) {
+              let livro = Math.floor(Math.random() * livrosContribuir.length);
+              while (livroanterior == livro) {
+                livro = Math.floor(Math.random() * livrosContribuir.length);
+              }
+              document.querySelector(`#livro${index} .card-title`).innerHTML =
+                livrosContribuir[livro].titulo;
+              document.querySelector(`#livro${index} .card-text`).innerHTML =
+                livrosContribuir[livro].descricao;
+              document.querySelector("#livro1 .btn.btn-success").href =
+                livrosContribuir[livro].link;
+              document.querySelector(
+                `#livro${index} img`
+              ).src = `/assets/images/books/${livrosContribuir[livro].foto}.png`;
+              livroanterior = livro;
+            }
+            break;
+          case "btnhabito":
+            // Gerar valor aletório de acordo com o tamanho o array
+            // Para sugerir algo sobre contribuir com a natureza
+            value = Math.floor(Math.random() * sugestoesHabito.length);
+            sugestao.innerHTML = sugestoesHabito[value];
+
+            for (let index = 1; index <= 2; index++) {
+              let livro = Math.floor(Math.random() * livrosContribuir.length);
+
+              while (livroanterior == livro) {
+                livro = Math.floor(Math.random() * livrosHabito.length);
+              }
+
+              document.querySelector(`#livro${index} .card-title`).innerHTML =
+                livrosHabito[livro].titulo;
+              document.querySelector(`#livro${index} .card-text`).innerHTML =
+                livrosHabito[livro].descricao;
+              document.querySelector("#livro1 .btn.btn-success").href =
+                livrosHabito[livro].link;
+              document.querySelector(
+                `#livro${index} img`
+              ).src = `/assets/images/books/${livrosHabito[livro].foto}.png`;
+              livroanterior = livro;
+            }
+            break;
         }
-        const livrosConhecer = [
-            {
-                "titulo": "The Hidden Life of Trees",
-                "descricao": "Peter Wohlleben, um lenhador que passou grande parte de sua vida estudando a floresta e como ela vive e respira como sua própria entidade, Wohlleben nos estimula a pensar nas árvores como um grupo familiar e não como agentes livres dentro do espaço do deserto.",
-                "link": "https://www.amazon.com/Hidden-Life-Trees-Communicate_Discoveries-Secret/dp/1771642483",
-                "foto": "lifeoftrees"
-            },
-            {
-                "titulo": "The Greening of the Self",
-                "descricao": "O livro de Joanna Macy reflete sobre como os níveis do Self podem evoluir para um lugar que se chama o “Green Self” ultrapassando nossa necessidade de pensar individualmente, como seres separados e desiguais do meio ambiente em que vivemos.",
-                "link": "https://www.amazon.com/Greening-Self-Joanna-Macy-ebook/dp/B00B0SBFKA",
-                "foto": "greeningoftheself"
-            },
-            {
-                "titulo": "A ferra e fogo",
-                "descricao": "Um livro que conta a história da devastação da Mata Atlântica brasileira, de Warren Dean.",
-                "link": "https://www.companhiadasletras.com.br/detalhe.php?codigo=10671",
-                "foto": "aferroefogo"
-            },
-            {
-                "titulo": "The Botany of Desire",
-                "descricao": "O livro  apresenta estudos de caso que espelham quatro tipos de desejos humanos que são refletidos na maneira como seletivamente crescemos, reproduzimos e projetamos geneticamente nossas plantas. A tulipa, beleza; maconha, intoxicação; a maçã, doçura; e a batata, controle.",
-                "link": "https://www.amazon.com.br/Botany-Desire-Plants-Eye-View-World/dp/0375760393",
-                "foto": "botanyofdesire"
-            },
-            {
-                "titulo": "A invenção da natureza",
-                "descricao": "A invenção da natureza revela a extraordinária vida do explorador, geógrafo e naturalista alemão Alexander von Humboldt (1769-1859), o cientista mais conhecido de seu tempo.",
-                "link": "https://www.amazon.com.br/Inven%C3%A7%C3%A3o-Natureza-Andrea-Wulf/dp/8542207556",
-                "foto": "invencaonatureza"
-            },
-            {
-                "titulo": "The Nature Fix",
-                "descricao": "Impecavelmente pesquisado e cuidadosamente escrito, The Nature Fix é uma ótima leitura. Florence Williams mergulha no assunto submetendo-se a um estudo após o outro sobre os efeitos da natureza no bem-estar humano.",
-                "link": "https://www.amazon.com.br/Nature-Fix-Happier-Healthier-Creative/dp/0393242714",
-                "foto": "naturefix"
-            }
+      }
 
-        ]
-        const livrosContribuir = [
-            {
-                "titulo": "Love Earth Now: The Power of Doing One Thing Every Day",
-                "descricao": "O livro de Leutjen sobre como ser um agente de mudança é repleto de dicas e instruções sobre como contribuir na mitigação das mudanças climáticas e a preservação meio ambiente",
-                "link": "https://www.amazon.com/Love-Earth-Now-Power-Doing/dp/1633536254",
-                "foto": "loveearth"
-            },
-            {
-                "titulo": "A Terra Inabitável - Uma História Do Futuro",
-                "descricao": "Best-seller do New York Times, uma reportagem corajosa e desafiadora sobre os problemas que o século XXI enfrentará por conta do aquecimento global.",
-                "link": "https://www.saraiva.com.br/a-terra-inabitavel-uma-historia-do-futuro-10531978/p",
-                "foto": "terrainabitavel"
-            },
-            {
-                "titulo": "Bringing Nature Home",
-                "descricao": "Em Bringing Nature Home, Douglas W. Tallamy revela o vínculo inquebrável entre espécies de plantas nativas e animais selvagens nativos - os insetos nativos não podem ou não comem plantas exóticas. Quando as plantas nativas desaparecem, os insetos desaparecem, empobrecendo a fonte de alimento para pássaros e outros animais.",
-                "link": "https://www.amazon.com/Bringing-Nature-Home-Wildlife-Expanded/dp/0881929921",
-                "foto": "bringingnature"
-            },
-            {
-                "titulo": "The Invention of Nature",
-                "descricao": "O aclamado autor de Jardineiros Fundadores revela a vida esquecida de Alexander von Humboldt, o naturalista alemão visionário cujas idéias mudaram a maneira como vemos o mundo natural - e, nesse processo, criou o ambientalismo moderno.",
-                "link": "https://www.amazon.com/Invention-Nature-Alexander-Humboldts-World/dp/0345806298/ref=sr_1_4?keywords=nature&qid=1573601575&rnid=3275128011&s=books&sr=1-4",
-                "foto": "inventionofnature"
-            },
-            {
-                "titulo": "The Eight Master Lessons of Nature",
-                "descricao": "Um manifesto fascinante para os milhões de pessoas que desejam estabelecer uma conexão mais vital e significativa com o mundo natural para viver uma vida melhor e mais gratificante",
-                "link": "https://www.amazon.com/Eight-Master-Lessons-Nature-Teaches/dp/1524743380/ref=sr_1_16?keywords=nature&qid=1573601575&rnid=3275128011&s=books&sr=1-16",
-                "foto": "eightmasterlessons"
-            },
-            {
-                "titulo": "Nature into Art",
-                "descricao": "Wave Hill, um jardim público de renome mundial no Bronx, possui um artesanato hortícola clássico incomparável entre outros jardins públicos nos Estados Unidos. Mas também adota um espírito de design ousado e inovador. Todo ano traz mudanças para o Wave Hill: novas combinações de cores, texturas e formas, além de temas criativos e experimentação constante",
-                "link": "https://www.amazon.com/Nature-into-Art-Gardens-Wave/dp/1604698519/ref=sr_1_17?keywords=nature&qid=1573601800&rnid=3275128011&s=books&sr=1-17",
-                "foto": "natureintoart"
-            },
-        ];
-        const livrosHabito = [
-            {
-                "titulo": "The Dream of the Earth",
-                "descricao": "O objetivo de Berry é nos educar sobre a saúde da Terra e sugerir maneiras de nos recondicionarmos às necessidades de nosso lar terreno",
-                "link": "https://www.amazon.com/Dream-Earth-Thomas-Berry/dp/0871566222",
-                "foto": "dreamoftheearth"
-            },
-            {
-                "titulo": "50 Ways to Help Save the Earth",
-                "descricao": "Este guia descreve cinquenta maneiras pelas quais você, sua congregação e sua comunidade local podem ajudar a combater o aquecimento global e a participar de uma parte vital do discipulado cristão. 50 Maneiras de Ajudar a Salvar a Terra faz uma conexão clara, de maneira prática e sem intimidação, entre a mordomia da terra e a vida de alguém.",
-                "link": "https://www.amazon.com/Ways-Help-Save-Earth-Difference/dp/0664233708",
-                "foto": "50waystohelp"
-            },
-            {
-                "titulo": "The Everything Green Living Book",
-                "descricao": "Se você estiver interessado em encontrar novas fontes de energia, viver verde e salvar o meio ambiente, este é um dos livros de vida verde que você deve comprar.",
-                "link": "https://www.amazon.com/Everything-Green-Living-Book-Environment/dp/1598694251",
-                "foto": "everythinggreen"
-            },
-            {
-                "titulo": "It's Easy Being Green",
-                "descricao": "Embora todos nós tenhamos consciência dos danos causados ao nosso amado planeta, não estamos fazendo muito para salvá-lo. Para discutir essa questão, a autora Crissy Trask escreveu o livro \"É fácil ser verde: um manual para uma vida ecologicamente correta\".",
-                "link": "https://www.amazon.com/Its-Easy-Being-Green-Earth-Friendly/dp/158685772X",
-                "foto": "itseasybeinggreen"
-            },
-            {
-                "titulo": "The Forest Garden Greenhouse",
-                "descricao": "Isso pertence à lista dos melhores livros sobre vida verde, o que explica claramente que não é muito difícil trazer o jardim da floresta para dentro de casa. É possível atingir o objetivo de criar uma floresta natural em seu quintal sem usar energia da rede.",
-                "link": "https://www.amazon.com.br/Forest-Garden-Greenhouse-Design-Permaculture/dp/1603584269",
-                "foto": "forestgarden"
-            },
-            {
-                "titulo": "Prefabulous and Sustainable",
-                "descricao": "Prefabulous and Sustainable é um dos livros altamente recomendados sobre vida verde. Ajuda a entender os ingredientes básicos da vida sustentável. Além disso, também dissipa os mitos errados associados às casas pré-fabricadas. De fato, este livro ajuda os leitores a entender a verdadeira idéia por trás das casas pré-fabricadas verdes.",
-                "link": "https://www.amazon.com/Prefabulous-Sustainable-Customizing-Affordable-Energy-Efficient/dp/0810984830",
-                "foto": "prefabulous"
-            }
-        ];
-        const sugestoesConhecer = [
-            "Sugiro que você explore o mundo",
-            "Sugiro que você vá caminhar pela floresta. Mas com cuidado!!",
-            "Sugiro uma vida melhor"
-        ]
-        const sugestoesContribuir = [
-            "Sugiro que você plante uma árvore. Acredite, faz diferença!",
-            "Sugiro que você ler um livro sobre como o desmatamento prejudica a natureza",
-            "Sugiro que você use um transporte público. Afinal, um dia não tem problema."
-        ]
-        const sugestoesHabito = [
-            "Sugiro que você faça uma reciclagem, um dos melhores hábitos verdes",
-            "Sugiro que você economize um pouco de luz, afinal, não usamos a todo momento",
-            "Sugiro que você economize agua, até mesmo porque um dia acaba!"
-        ]
+      $(document).ready(function () {
+        // Add smooth scrolling to all links
+        $("a").on("click", function (event) {
+          // Make sure this.hash has a value before overriding default behavior
+          setTimeout(() => {
+            document.getElementById("livros").style.display = "block";
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
 
+              // Store hash
+              var hash = this.hash;
 
-        function getLivros(event) {
-            //document.getElementById("livros").style.display = "block";
-            // Sugestão que aparecerá para o usuário quando ele clicar em 
-            // alguma das 3 opções
-            let sugestao = document.getElementById("sugestao");
-            let value = 0;
-            let livroanterior = Number.POSITIVE_INFINITY;
-            sugestao.className = "alert alert-success";
-            sugestao.setAttribute("role","alert")
-
-            switch (event.id) {
-                case 'btnconhecer':
-                    // Gerar valor aletório de acordo com o tamanho o array
-                    // Para sugerir algo sobre conhecer a natureza
-                    value = Math.floor(Math.random() * sugestoesConhecer.length);
-                    sugestao.innerHTML = sugestoesConhecer[value]
-
-                    for (let index = 1; index <= 2; index++) {
-                        let livro = Math.floor(Math.random() * livrosConhecer.length)
-
-                        while (livroanterior == livro) {
-                            livro = Math.floor(Math.random() * livrosConhecer.length)
-                        }
-
-                        document.querySelector(`#livro${index} .card-title`).innerHTML = livrosConhecer[livro].titulo
-                        document.querySelector(`#livro${index} .card-text`).innerHTML = livrosConhecer[livro].descricao
-                        document.querySelector(`#livro${index} .btn.btn-success`).href = livrosConhecer[livro].link
-                        document.querySelector(`#livro${index} img`).src = `/assets/images/books/${livrosConhecer[livro].foto}.png`
-                        livroanterior = livro;
-                    }
-                    break;
-                case 'btncontribuir':
-                    // Gerar valor aletório de acordo com o tamanho o array
-                    // Para sugerir algo sobre contribuir com a natureza
-                    value = Math.floor(Math.random() * sugestoesContribuir.length);
-                    sugestao.innerHTML = sugestoesContribuir[value]
-
-
-                    for (let index = 1; index <= 2; index++) {
-                        let livro = Math.floor(Math.random() * livrosContribuir.length)
-                        while (livroanterior == livro) {
-                            livro = Math.floor(Math.random() * livrosContribuir.length)
-                        }
-                        document.querySelector(`#livro${index} .card-title`).innerHTML = livrosContribuir[livro].titulo
-                        document.querySelector(`#livro${index} .card-text`).innerHTML = livrosContribuir[livro].descricao
-                        document.querySelector("#livro1 .btn.btn-success").href = livrosContribuir[livro].link
-                        document.querySelector(`#livro${index} img`).src = `/assets/images/books/${livrosContribuir[livro].foto}.png`
-                        livroanterior = livro;
-                    }
-                    break;
-                case 'btnhabito':
-                    // Gerar valor aletório de acordo com o tamanho o array
-                    // Para sugerir algo sobre contribuir com a natureza
-                    value = Math.floor(Math.random() * sugestoesHabito.length);
-                    sugestao.innerHTML = sugestoesHabito[value]
-
-                    for (let index = 1; index <= 2; index++) {
-                        let livro = Math.floor(Math.random() * livrosContribuir.length)
-
-                        while (livroanterior == livro) {
-                            livro = Math.floor(Math.random() * livrosHabito.length)
-                        }
-
-                        document.querySelector(`#livro${index} .card-title`).innerHTML = livrosHabito[livro].titulo
-                        document.querySelector(`#livro${index} .card-text`).innerHTML = livrosHabito[livro].descricao
-                        document.querySelector("#livro1 .btn.btn-success").href = livrosHabito[livro].link
-                        document.querySelector(`#livro${index} img`).src = `/assets/images/books/${livrosHabito[livro].foto}.png`
-                        livroanterior = livro;
-                    }
-                    break;
-            }
-        }
-
-
-        $(document).ready(function () {
-            // Add smooth scrolling to all links
-            $("a").on('click', function (event) {
-
-                // Make sure this.hash has a value before overriding default behavior
-                setTimeout(() => {
-                    document.getElementById("livros").style.display = "block";
-                    if (this.hash !== "") {
-                        // Prevent default anchor click behavior
-                        event.preventDefault();
-
-                        // Store hash
-                        var hash = this.hash;
-
-                        // Using jQuery's animate() method to add smooth page scroll
-                        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                        $('html, body').animate({
-                            scrollTop: $(hash).offset().top
-                        }, 800, function () {
-
-                            // Add hash (#) to URL when done scrolling (default click behavior)
-                            window.location.hash = hash;
-                        });
-                    } // End if
-                }, 2000)
-            });
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+              $("html, body").animate(
+                {
+                  scrollTop: $(hash).offset().top,
+                },
+                800,
+                function () {
+                  // Add hash (#) to URL when done scrolling (default click behavior)
+                  window.location.hash = hash;
+                }
+              );
+            } // End if
+          }, 2000);
         });
+      });
 
-        $('#calcular-gasto').submit(function (e) {
-            e.preventDefault();
-        });
+      $("#calcular-gasto").submit(function (e) {
+        e.preventDefault();
+      });
     </script>
-</body>
-
+  </body>
 </html>
